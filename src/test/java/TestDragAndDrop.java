@@ -6,16 +6,17 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestDragAndDrog {
+public class TestDragAndDrop {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setupExtetion() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://the-internet.herokuapp.com";
+        Configuration.browserSize = "1920x1080";
     }
 
     @Test
-    void theTestDragAndDrog() {
+    void theDragAndDropTest() {
         open("/drag_and_drop");
         $("#column-a").shouldHave(text("A"));
         $("#column-b").shouldHave(text("B"));

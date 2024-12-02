@@ -9,12 +9,13 @@ import static com.codeborne.selenide.Selenide.*;
 public class SearchPageAndTitle {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setupExtetion() {
         Configuration.pageLoadStrategy = "eager";
+        Configuration.browserSize = "1920x1080";
     }
 
     @Test
-    void openPageAndTitle() {
+    void openPageAndTitleTest() {
         open("https://github.com/");
         $(byTagAndText("button", "Solutions")).hover();
         $(byTagAndText("a", "Enterprises")).click();
